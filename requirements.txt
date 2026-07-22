@@ -1,0 +1,30 @@
+# Core Utilities
+numpy
+pandas
+
+# Machine Learning
+scikit-learn
+
+# Face Recognition
+dlib-bin
+# If dlib-bin does not work, install manually:
+# dlib-20.0.99-cp313-cp313-win_amd64.whl
+
+git+https://github.com/ageitgey/face_recognition_models
+
+# Build Tools
+setuptools
+
+# Database & Authentication
+supabase
+bcrypt
+
+# Image Processing
+pillow
+
+# Web Application
+streamlit
+
+
+
+
