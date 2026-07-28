@@ -25,6 +25,11 @@ pillow
 # Web Application
 streamlit
 
+# QR Code Generator
+segno
 
+# Audio Processing
+librosa
 
-
+# Voice Embedding / Speaker Recognition
+resemblyzer

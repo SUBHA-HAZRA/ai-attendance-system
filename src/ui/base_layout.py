@@ -1,10 +1,10 @@
 import streamlit as st
 
 
-
 def style_background_home():
 
-    st.markdown("""
+    st.markdown(
+        """
         <style>
 
                 .stApp {
@@ -18,13 +18,15 @@ def style_background_home():
                     }
         </style>  
 
-                """
-            ,unsafe_allow_html=True)
-    
+                """,
+        unsafe_allow_html=True,
+    )
+
 
 def style_background_dashboard():
 
-    st.markdown("""
+    st.markdown(
+        """
         <style>
 
                 .stApp {
@@ -33,15 +35,15 @@ def style_background_dashboard():
 
         </style>  
 
-                """
-            ,unsafe_allow_html=True)
-    
+                """,
+        unsafe_allow_html=True,
+    )
 
-    
 
 def style_base_layout():
-# asdasd
-    st.markdown("""
+    # asdasd
+    st.markdown(
+        """
         <style>
         @import url('https://fonts.googleapis.com/css2?family=Climate+Crisis:YEAR@1979&display=swap');
         @import url('https://fonts.googleapis.com/css2?family=Outfit:wght@100..900&display=swap');
@@ -106,7 +108,9 @@ def style_base_layout():
 
             button:hover{
                 transform :scale(1.05)}
+
         </style>  
 
-                """
-            ,unsafe_allow_html=True)
+                """,
+        unsafe_allow_html=True,
+    )
