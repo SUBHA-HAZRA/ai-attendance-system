@@ -1,3 +1,6 @@
+# Web Application
+streamlit
+
 # Core Utilities
 numpy
 pandas
@@ -22,8 +25,6 @@ bcrypt
 # Image Processing
 pillow
 
-# Web Application
-streamlit
 
 # QR Code Generator
 segno

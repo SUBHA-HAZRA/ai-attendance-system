@@ -10,6 +10,7 @@ from src.database.db import (
     teacher_login,
     get_teacher_subjects,
     get_attendance_for_teacher,
+    delete_subject,
 )
 from src.components.dialog_create_subject import create_subject_dialog
 from src.components.dialog_share_subject import share_subject_dialog
@@ -218,24 +219,32 @@ def teacher_tab_manage_subjects():
 
     # LIST all SUBJECTS
     subjects = get_teacher_subjects(teacher_id)
+
     if subjects:
         for sub in subjects:
             stats = [
                 ("🫂", "Students", sub['total_students']),
                 ("🕰️", "Classes", sub['total_classes']),
             ]
-        def share_btn():
-            if st.button(f"Share Code: {sub['name']}", key=f"share_{sub['subject_code']}", icon=":material/share:"):
-                share_subject_dialog(sub['name'], sub['subject_code'])
-            st.space()
+            def share_btn(sub=sub):
+                if st.button(f"Share Code: {sub['name']}", key=f"share_{sub['subject_code']}", icon=":material/share:"):
+                    share_subject_dialog(sub['name'], sub['subject_code'])
+                st.space()
 
-        subject_card(
-            name = sub['name'],
-            code = sub['subject_code'],
-            section = sub['section'],
-            stats=stats,
-            footer_callback=share_btn
-        )
+            def delete_btn(sub=sub):
+                if st.button("Delete",key=f"delete_{sub['subject_id']}",icon=":material/delete:"):
+                    delete_subject(sub["subject_id"])
+                    st.toast("Subject deleted successfully!")
+                    st.rerun()
+
+            subject_card(
+                name = sub['name'],
+                code = sub['subject_code'],
+                section = sub['section'],
+                stats=stats,
+                footer_callback=share_btn,
+                delete_callback=delete_btn
+            )
     else:
         st.info("NO SUBJECTS FOUND. CREATE ONE ABOVE")
 
